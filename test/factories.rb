@@ -3,10 +3,10 @@ FactoryBot.define do
     first_name 'John'
     last_name  'Doe'
     email 'example@domain.com'
-    password 'some_random_password'
+    password_digest 'some_random_password'
+    initialize_with { new(attributes) }
   end
 
-  # This will use the User class (Admin would have been guessed)
   factory :loan do
     name 'The Lone Lemon'
     amount  999999
@@ -14,6 +14,7 @@ FactoryBot.define do
     apr 0.035
     payments_per_year 12
     lifespan 30
-    user_id 1
+    user
+    initialize_with { new(attributes) }
   end
 end
