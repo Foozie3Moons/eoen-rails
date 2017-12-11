@@ -4,17 +4,15 @@ FactoryBot.define do
     last_name  'Doe'
     email 'example@domain.com'
     password_digest 'some_random_password'
-    initialize_with { new(attributes) }
   end
 
   factory :loan do
     name 'The Lone Lemon'
-    amount  999999
-    down_payment 99999
-    apr 0.035
+    amount  5500
+    down_payment 500
+    apr 0.045
     payments_per_year 12
-    lifespan 30
+    lifespan 5
     user
-    initialize_with { new(attributes) }
   end
 end
