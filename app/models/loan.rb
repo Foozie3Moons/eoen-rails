@@ -1,6 +1,9 @@
 class Loan < ApplicationRecord
   belongs_to :user
 
+  validates :name, length: { in: 1..36}, presence: true, uniqueness: true
+  validates :payments_per_year, :down_payment, :lifespan, :apr, :amount, numericality: { greater_than: 0,  message: "Amount must be greater than 0"}
+
   def total_payments
     return self.payments_per_year * self.lifespan
   end
