@@ -3,7 +3,7 @@ FactoryBot.define do
     first_name 'John'
     last_name  'Doe'
     email 'example@domain.com'
-    password_digest 'some_random_password'
+    password 'some_random_password'
   end
 
   factory :loan do
